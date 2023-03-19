@@ -1,8 +1,8 @@
 # Electron CPU (16bit)
 
-## CPU *(16bit)* architecture made using [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution) for learning how do CPU works on the hardware level.
+## CPU *(16bit)* architecture made with [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution) to learn how a CPU works on the hardware level.
 
-A simple 16bit, 8 register, multi BUS **CPU** created using [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution) for testing and playing around by setting up different **instruction set** and executing **programs**, that can be made using *customs tools* (simple Python programs). The CPU uses a simple **Register File** architecture with a **direct BUS I/O** interface, used for connecting different *peripherals*.
+A simple 16bit, 8 register, multi BUS **CPU** created using [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution) for testing and playing around by setting up different **instruction sets** and executing **programs**, that can be made using *customs tools* (simple Python programs). The CPU uses a simple **Register File** architecture with a **direct BUS I/O** interface, used to connect different *peripherals*.
 The project provides:
 * **CPU logic diagram**;
 * **Logisim-evolution project**;
@@ -29,18 +29,18 @@ The project provides:
 ## (How to use)
 ### How to use the [Logisim-evolution project](CPU%20-%20(Architecture)/Electron_CPU_16bit.circ) :
 
-For opening the [**Logisim-evolution project**](CPU%20-%20(Architecture)/Electron_CPU_16bit.circ) you need to download [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution) from the GitHub page I linked [<u>here</u>](https://github.com/logisim-evolution/logisim-evolution/releases).
+Download [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution) from the GitHub page I linked [<u>here</u>](https://github.com/logisim-evolution/logisim-evolution/releases) to open the [**Logisim-evolution project**](CPU%20-%20(Architecture)/Electron_CPU_16bit.circ).
 
-The project is created on the `v3.8.0`, but I think it wil work with all the future versions.
+The project is created on version `v3.8.0`, but I think it wil work with all future versions.
 
 ### How to load programs in the CPU :
 
-For loading a **program** in the CPU you need to *compile* the source code in *binari* using the loaded **instruction set** of the CPU, and then load the file in the **RAM** (you can load a text file like the ones in the [Example - (Programs)](Example%20-%20(Programs)/Addition/Addition_data.txt) using the *`Edit content/Open`* functionality of [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution)).
+In order to load a **program** in the CPU you need to *compile* the source code in *binari* using the loaded **instruction set** of the CPU, and then load the file in the **RAM** (you can load a text file like the ones in the [Example - (Programs)](Example%20-%20(Programs)/Addition/Addition_data.txt) using the *`Edit content/Open`* functionality of [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution)).
 
 ### How to use the [**CU compiler**](Tool%20-%20(Software)/CU_Compiler/cu_compiler.py) :
 
-If you want to add **instruction** to the *instruction set* of the CPU what you need to do is:
-1. Add the **RTL code** (**R**egister **T**ransfer **L**anguage) of the instruction to add to this [file](Tool%20-%20(Software)/CU_Compiler/CU_Instructions/CU_Instructions-RTL%20(v1.0).md);
+If you want to change or add an **instruction** to the *instruction set* of the CPU what you need to do is:
+1. Add the **RTL code** (**R**egister **T**ransfer **L**anguage) of the instruction to this [file](Tool%20-%20(Software)/CU_Compiler/CU_Instructions/CU_Instructions-RTL%20(v1.0).md);
 2. Add the new **μ-instruction** (*micro* instruction) to the `UINS_SET` dictionary (line 137 of the [**CU compiler**](Tool%20-%20(Software)/CU_Compiler/cu_compiler.py)) with the relative **alpha signal**;
 3. Recompile the `CU_data.txt` file by *running* the Python script;
 4. Put the new `CU_data.txt` file in the **CU ROM** in ***Logisim***;
@@ -71,9 +71,9 @@ List of things to **add** or **improve** *(Checked means **W.I.P**)*:
 
 Take in consideration that some of the *μ-instruction* in the [CU_Instructions-RTL (v1.0)](Tool%20-%20(Software)/CU_Compiler/CU_Instructions/CU_Instructions-RTL%20(v1.0).md) file, relative to **ALU operation** that use *2 inputs*, have *misleading names* because the order of the operation is actually **reversed**!
 
-This is due to an **error** occurred during the naming of the *μ-instruction* and dose not falls back on the actual **implementation**.
+This is due to an **error** occurred during the naming of the *μ-instruction* and dose not fall back on the actual **implementation**.
 
-This is only a problem for ***non commutativity operation***, like the *subtraction*, where the actual order of operation can change the **results**.
+This is only a problem for ***non commutative operations***, like *subtraction*, where the actual order of operation can change the **results**.
 
 The things you need to remember is that the **Ri** register can only be *directly put* in the ***B*** space of the **ALU**, and the **Rj** register can only be *directly put* in the ***A*** space of the **ALU**.
 

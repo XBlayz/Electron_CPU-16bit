@@ -1,5 +1,9 @@
 <Title>
 ---
-+<Added>
--<Removed>
-~<Changed/Fixed>
++<Added>;
+-<Removed>;
+~<Changed/Fixed>;
+/
++/-/~<List>:
+*<Element>;
+*<Element>;
