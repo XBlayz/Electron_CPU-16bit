@@ -13,10 +13,14 @@ The project provides:
   * **PC** (Program Counter);
   * **RF** (Register File);
 * *Programming tools*:
-  * **CU compiler** (CPU *instruction set* compiler);
+  * **CU compiler** `v1.0` (CPU *instruction set* compiler);
+  * **Assembly compiler** `v0.0` (Program *assembler*); #TODO
 * *Programs examples*:
-  * **Addition**
-  * **Greater**
+  * *__Old__ version*:
+    * **Addition**
+    * **Greater**
+  * *__New__ version*:
+    * ...
 
 ### CPU diagram
 <img src=".img\CPU diagram.svg">
@@ -51,6 +55,9 @@ You might need to install the `tqdm` package, used for displaying progress bas i
 
 More info [<u>here</u>](https://github.com/tqdm/tqdm).
 
+### How to compile a program :
+#TODO
+
 ## -Find a bug?-
 
 If you found an *issue* or would like to submit an *improvement* to this project, please submit an issue using the **issues tab** above. If you would like to submit a **PR** with a *fix*, reference the *issue* you are referring to.
@@ -60,9 +67,11 @@ If you want any *additional information* about the **project**, post an **issue*
 ## -Known issues- (Work in progress)
 
 List of things to **add** or **improve** *(Checked means **W.I.P**)*:
-- [X] Machine code compiler;
-- [ ] Fix name of misleading μ-instruction;
-- [ ] I/O functionality (+datasheet);
+- [X] **Machine code compiler**;
+- [ ] **Fix name of misleading μ-instruction*;
+- [ ] **I/O** functionality (+datasheet);
+- [ ] **CU Compiler** terminal execution;
+- [ ] **CPU tool** (all-in-one Python app);
 - [ ] ...
 
 ---
